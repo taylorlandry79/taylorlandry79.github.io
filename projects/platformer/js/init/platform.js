@@ -36,10 +36,10 @@
 
         // example:       
         platform.create(110,370);
-        //platform.create(330,210);
-        //platform.create(330,550);
-        //platform.create(90,75);
-        //platform.create(50,625);
+        platform.create(330,225);
+        platform.create(330,510);
+        platform.create(90,95);
+        platform.create(50,625);
         
         
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
