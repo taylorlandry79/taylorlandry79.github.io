@@ -16,13 +16,16 @@
 			top: 100px;
 			left: 0px;  /* <--- Change me! */
 		}
+		body {
+			background-color: pink;
+		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 </head>
 <body class="board">
 	<!-- HTML for the box -->
-	<div class="box">?</div>
+	<div class="box">0</div>
 
 	<script>
 		(function(){
@@ -59,6 +62,8 @@
 			
 			// TODO 2 - Variable declarations 
 			var positionX = 0;
+			var points = 0;
+			var speed = 10;
 
 			
 			/* 
@@ -67,7 +72,14 @@
 			turn it around! 
 			*/
 			function update() {
-			moveBoxTo(positionX);	
+			positionX = positionX + speed;	
+			moveBoxTo(positionX);
+			if (positionX > boardWidth){
+				speed = -speed;
+			}
+			else if (positionX < 0){
+			 speed = speed * - 1;
+			}
 
 			};
 
@@ -77,9 +89,10 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
-
-
+				positionX = 0;
+				points = points + 1;
+				changeBoxText(points);
+				speed = speed + 3;
 			};
 		})();
 	</script>
